@@ -33,6 +33,10 @@ body {
           transform: scale(1.01);
 }
 
+.movie_card:hover .play-btn {
+  opacity: 0.7;
+}
+
 .movie_card .info_section {
   position: relative;
   width: 100%;
@@ -81,6 +85,7 @@ body {
   -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
+  opacity: 0.9;
 }
 
 .movie_card .info_section .movie_desc {
@@ -132,6 +137,38 @@ body {
   transition: 0.6s;
 }
 
+.movie_card .play-btn {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid slategray;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.movie_card .play-btn i {
+  font-size: 60px;
+  color: slategray;
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.movie_card .play-btn:hover {
+  opacity: 1;
+}
+
 @media screen and (min-width: 768px) {
   .movie_header {
     width: 65%;
@@ -140,16 +177,56 @@ body {
     width: 50%;
   }
   .info_section {
-    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #e5e6e6), to(transparent));
-    background: linear-gradient(to right, #e5e6e6 50%, transparent 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(20%, #e5e6e6), color-stop(130%, transparent));
+    background: linear-gradient(to right, #e5e6e6 20%, transparent 130%);
   }
   .blur_back {
     width: 80%;
-    background-position: -100% 10% !important;
+  }
+  .tomb_bg {
+    background-position: -90% 10% !important;
+  }
+  .black-widow_bg {
+    background-position: -350% 10% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movie_card {
+    width: 95%;
+    margin: 70px auto;
+    min-height: 350px;
+    height: auto;
+  }
+  .blur_back {
+    width: 100%;
+  }
+  .movie_header {
+    width: 100%;
+    margin-top: 85px;
+  }
+  .movie_desc {
+    width: 100%;
+  }
+  .info_section {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(40%, #e5e6e6), to(transparent));
+    background: linear-gradient(to top, #e5e6e6 40%, transparent 100%);
+    display: -ms-inline-grid;
+    display: inline-grid;
+  }
+  .tomb_bg {
+    background-position: 50% 50% !important;
+  }
+  .black-widow_bg {
+    background-position: 50% 50% !important;
   }
 }
 
 .tomb_bg {
   background: url("/img/lara-croft-bg.jpg");
+}
+
+.black-widow_bg {
+  background: url("/img/black-widow-bg1.jpg");
 }
 /*# sourceMappingURL=main.css.map */
