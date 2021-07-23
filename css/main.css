@@ -24,8 +24,8 @@ body {
   border-radius: 10px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  -webkit-box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 120px -25px rgba(0, 0, 2, 0.5);
+          box-shadow: 0px 0px 120px -25px rgba(0, 0, 2, 0.5);
 }
 
 .movie_card:hover {
@@ -34,7 +34,7 @@ body {
 }
 
 .movie_card:hover .play-btn {
-  opacity: 0.7;
+  opacity: 0.3;
 }
 
 .movie_card .info_section {
@@ -44,6 +44,22 @@ body {
   background-blend-mode: multiply;
   z-index: 2;
   border-radius: 10px;
+}
+
+.movie_card .info_section .bookmark {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 24px;
+  color: white;
+  opacity: 0.9;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.movie_card .info_section .bookmark:hover {
+  opacity: 1;
 }
 
 .movie_card .info_section .movie_header {
@@ -75,6 +91,11 @@ body {
   display: inline-block;
   color: #959595;
   margin-left: 10px;
+}
+
+.movie_card .info_section .movie_header .rating {
+  margin-top: 16px;
+  color: gold;
 }
 
 .movie_card .info_section .movie_header .poster {
@@ -142,13 +163,13 @@ body {
   padding: 0;
   position: absolute;
   top: 50%;
-  right: 10%;
+  right: 16%;
   width: 100px;
   height: 100px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 2px solid slategray;
+  border: 2px solid #d83333;
   opacity: 0;
   cursor: pointer;
   -webkit-transition: opacity 0.3s;
@@ -157,7 +178,8 @@ body {
 
 .movie_card .play-btn i {
   font-size: 60px;
-  color: slategray;
+  color: #d83333;
+  text-shadow: 0 0 32px #d83333;
   position: absolute;
   top: 50%;
   left: 55%;
@@ -166,7 +188,7 @@ body {
 }
 
 .movie_card .play-btn:hover {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 @media screen and (min-width: 768px) {
@@ -177,8 +199,8 @@ body {
     width: 50%;
   }
   .info_section {
-    background: -webkit-gradient(linear, left top, right top, color-stop(20%, #e5e6e6), color-stop(130%, transparent));
-    background: linear-gradient(to right, #e5e6e6 20%, transparent 130%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(20%, #e5e6e6), color-stop(120%, transparent));
+    background: linear-gradient(to right, #e5e6e6 20%, transparent 120%);
   }
   .blur_back {
     width: 80%;
